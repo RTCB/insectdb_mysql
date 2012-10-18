@@ -1,6 +1,6 @@
 module Insectdb
 
-  Insectdb::SEPARATOR = ';'
+  SEPARATOR = ';'
 
   def self.connect
     config =
@@ -23,23 +23,23 @@ module Insectdb
     end
 
     ex.call('Dumping segments...') do
-      File.open(p.call('segment'),'w') {|f| f << InsExp::Segment.dump}
+      File.open(p.call('segment'),'w') {|f| f << Segment.dump}
     end
 
     ex.call("Dumping mrnas...") do
-      File.open(p.call('mrna'),'w') {|f| f << InsExp::Mrna.dump}
+      File.open(p.call('mrna'),'w') {|f| f << Mrna.dump}
     end
 
     ex.call("Dumping genes...") do
-      File.open(p.call('gene'),'w') {|f| f << InsExp::Gene.dump}
+      File.open(p.call('gene'),'w') {|f| f << Gene.dump}
     end
 
     ex.call("Dumping genes_mrnas...") do
-      File.open(p.call('genes_mrnas'),'w') {|f| f << InsExp::GeneMrna.dump}
+      File.open(p.call('genes_mrnas'),'w') {|f| f << GeneMrna.dump}
     end
 
     ex.call("Dumping mrnas_segments...") do
-      File.open(p.call('mrnas_segments'),'w') {|f| f << InsExp::MrnaSegment.dump}
+      File.open(p.call('mrnas_segments'),'w') {|f| f << MrnaSegment.dump}
     end
   end
 
